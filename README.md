@@ -8,7 +8,7 @@ Olá! Este é um sistema desenvolvido para cartórios civis, que permite o regis
 
 Antes de começar, você vai precisar ter instalado:
 - [Visual Studio 2022](https://visualstudio.microsoft.com/pt-br/vs/) (ou superior) - opcional
-- [.NET 9.0 SDK](https://dotnet.microsoft.com/download)
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/pt-br/download/dotnet/8.0)
 - [PostgreSQL 15](https://www.postgresql.org/download/) (ou superior)
 - [Npgsql](https://www.npgsql.org/) (já incluído no projeto)
 
@@ -83,7 +83,7 @@ Antes de começar, você vai precisar ter instalado:
 ## Tecnologias Usadas
 
 - **Frontend**: Windows Forms (porque é prático e rápido!)
-- **Backend**: .NET 9.0
+- **Backend**: .NET 8.0
 - **Banco de Dados**: PostgreSQL (o mais robusto e confiável)
 - **ORM**: Entity Framework Core (pra facilitar nossa vida com o banco)
 - **Relatórios**: ReportViewer (pra gerar aqueles relatórios bonitões)
