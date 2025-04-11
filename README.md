@@ -16,7 +16,7 @@ Antes de começar, você vai precisar ter instalado:
 
 1. **Clonar o Repositório**
    ```bash
-   git clone [url-do-repositorio]
+   git clone https://github.com/henr1q/DeMaria
    cd DeMaria
    ```
 
