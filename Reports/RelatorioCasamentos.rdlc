@@ -235,10 +235,22 @@
                   <Width>3.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
+                  <Width>3.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.5cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>3.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>3.5cm</Width>
@@ -253,19 +265,7 @@
                   <Width>3.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
                   <Width>3.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.5cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -341,7 +341,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Cônjuge 1</Value>
+                                  <Value>Nome Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -371,7 +371,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Data Nascimento Conjuge 1</Value>
+                                  <Value>Data Nascimento Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -401,7 +401,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Cônjuge 2</Value>
+                                  <Value>Nome Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -431,7 +431,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Data Nascimento Conjuge 2</Value>
+                                  <Value>Data Nascimento Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -461,7 +461,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Pai do Cônjuge 1</Value>
+                                  <Value>Nome Pai Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -491,7 +491,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Data Nascimento Pai Conjuge 1</Value>
+                                  <Value>Nome Mãe Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -521,7 +521,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CPF Pai Conjuge 1</Value>
+                                  <Value>Data Nascimento Pai Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -551,7 +551,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mãe do Cônjuge 1</Value>
+                                  <Value>Data Nascimento Mãe Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -581,7 +581,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Data Nascimento Mae Conjuge 1</Value>
+                                  <Value>CPF Pai Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -611,7 +611,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CPF Mae Conjuge 1</Value>
+                                  <Value>CPF Mãe Cônjuge 1</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -641,7 +641,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Pai do Cônjuge 2</Value>
+                                  <Value>Nome Pai Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -671,7 +671,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Data Nascimento Pai Conjuge 2</Value>
+                                  <Value>Nome Mãe Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -701,7 +701,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CPF Pai Conjuge 2</Value>
+                                  <Value>Data Nascimento Pai Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -731,7 +731,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Mãe do Cônjuge 2</Value>
+                                  <Value>Data Nascimento Mãe Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -761,7 +761,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Data Nascimento Mae Conjuge 2</Value>
+                                  <Value>CPF Pai Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -791,7 +791,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>CPF Mae Conjuge 2</Value>
+                                  <Value>CPF Mãe Cônjuge 2</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
