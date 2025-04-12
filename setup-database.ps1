@@ -58,13 +58,9 @@ try {
     & dotnet tool install --global dotnet-ef
 }
 
-# Rebuild do projeto para garantir que as configurações estão atualizadas
-Write-Host "Reconstruindo o projeto..."
-& dotnet build
-
-# Executa as migrações do banco de dados usando a connection string explicitamente
+# Executa as migrações do banco de dados
 Write-Host "Executando migrações do banco de dados..."
-& dotnet ef database update --connection "$connectionString"
+& dotnet ef database update
 
 if ($LASTEXITCODE -eq 0) {
     Write-Host "Migrações executadas com sucesso!"

@@ -138,8 +138,9 @@ namespace DeMaria.Forms
         {
             try
             {
-                var dataInicio = DateTime.SpecifyKind(dtpInicio.Value.Date, DateTimeKind.Utc);
-                var dataFim = DateTime.SpecifyKind(dtpFim.Value.Date.AddDays(1).AddSeconds(-1), DateTimeKind.Utc);
+                // Convert local dates to UTC for database query
+                var dataInicio = DateTime.SpecifyKind(dtpInicio.Value.Date, DateTimeKind.Local).ToUniversalTime();
+                var dataFim = DateTime.SpecifyKind(dtpFim.Value.Date.AddDays(1).AddSeconds(-1), DateTimeKind.Local).ToUniversalTime();
 
                 var registros = _context.RegistrosCasamento
                     .Include(r => r.Conjuge1)
@@ -147,22 +148,22 @@ namespace DeMaria.Forms
                     .Where(r => r.DataRegistro >= dataInicio && r.DataRegistro <= dataFim)
                     .Select(r => new
                     {
-                        DataRegistro = r.DataRegistro,
-                        DataCasamento = r.DataCasamento,
+                        DataRegistro = r.DataRegistro.ToLocalTime(),
+                        DataCasamento = r.DataCasamento.ToLocalTime(),
                         NomeConjuge1 = r.Conjuge1.Nome,
-                        DataNascimentoConjuge1 = r.Conjuge1.DataNascimento,
+                        DataNascimentoConjuge1 = r.Conjuge1.DataNascimento.ToLocalTime(),
                         NomeConjuge2 = r.Conjuge2.Nome,
-                        DataNascimentoConjuge2 = r.Conjuge2.DataNascimento,
+                        DataNascimentoConjuge2 = r.Conjuge2.DataNascimento.ToLocalTime(),
                         NomePaiConjuge1 = r.Conjuge1.NomePai,
                         NomeMaeConjuge1 = r.Conjuge1.NomeMae,
-                        DataNascimentoPaiConjuge1 = r.Conjuge1.DataNascimentoPai,
-                        DataNascimentoMaeConjuge1 = r.Conjuge1.DataNascimentoMae,
+                        DataNascimentoPaiConjuge1 = r.Conjuge1.DataNascimentoPai.HasValue ? r.Conjuge1.DataNascimentoPai.Value.ToLocalTime() : (DateTime?)null,
+                        DataNascimentoMaeConjuge1 = r.Conjuge1.DataNascimentoMae.HasValue ? r.Conjuge1.DataNascimentoMae.Value.ToLocalTime() : (DateTime?)null,
                         CpfPaiConjuge1 = r.Conjuge1.CpfPai,
                         CpfMaeConjuge1 = r.Conjuge1.CpfMae,
                         NomePaiConjuge2 = r.Conjuge2.NomePai,
                         NomeMaeConjuge2 = r.Conjuge2.NomeMae,
-                        DataNascimentoPaiConjuge2 = r.Conjuge2.DataNascimentoPai,
-                        DataNascimentoMaeConjuge2 = r.Conjuge2.DataNascimentoMae,
+                        DataNascimentoPaiConjuge2 = r.Conjuge2.DataNascimentoPai.HasValue ? r.Conjuge2.DataNascimentoPai.Value.ToLocalTime() : (DateTime?)null,
+                        DataNascimentoMaeConjuge2 = r.Conjuge2.DataNascimentoMae.HasValue ? r.Conjuge2.DataNascimentoMae.Value.ToLocalTime() : (DateTime?)null,
                         CpfPaiConjuge2 = r.Conjuge2.CpfPai,
                         CpfMaeConjuge2 = r.Conjuge2.CpfMae
                     })

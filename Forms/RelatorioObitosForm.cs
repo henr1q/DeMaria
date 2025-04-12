@@ -138,22 +138,23 @@ namespace DeMaria.Forms
         {
             try
             {
-                var dataInicio = DateTime.SpecifyKind(dtpInicio.Value.Date, DateTimeKind.Utc);
-                var dataFim = DateTime.SpecifyKind(dtpFim.Value.Date.AddDays(1).AddSeconds(-1), DateTimeKind.Utc);
+                // Convert local dates to UTC for database query
+                var dataInicio = DateTime.SpecifyKind(dtpInicio.Value.Date, DateTimeKind.Local).ToUniversalTime();
+                var dataFim = DateTime.SpecifyKind(dtpFim.Value.Date.AddDays(1).AddSeconds(-1), DateTimeKind.Local).ToUniversalTime();
 
                 var registros = _context.RegistrosObito
                     .Include(r => r.Falecido)
                     .Where(r => r.DataRegistro >= dataInicio && r.DataRegistro <= dataFim)
                     .Select(r => new
                     {
-                        DataRegistro = r.DataRegistro,
-                        DataObito = r.DataObito,
+                        DataRegistro = r.DataRegistro.ToLocalTime(),
+                        DataObito = r.DataObito.ToLocalTime(),
                         Nome = r.Falecido.Nome,
-                        DataNascimento = r.Falecido.DataNascimento,
+                        DataNascimento = r.Falecido.DataNascimento.ToLocalTime(),
                         NomePai = r.Falecido.NomePai,
                         NomeMae = r.Falecido.NomeMae,
-                        DataNascimentoPai = r.Falecido.DataNascimentoPai,
-                        DataNascimentoMae = r.Falecido.DataNascimentoMae
+                        DataNascimentoPai = r.Falecido.DataNascimentoPai.HasValue ? r.Falecido.DataNascimentoPai.Value.ToLocalTime() : (DateTime?)null,
+                        DataNascimentoMae = r.Falecido.DataNascimentoMae.HasValue ? r.Falecido.DataNascimentoMae.Value.ToLocalTime() : (DateTime?)null
                     })
                     .ToList();
 

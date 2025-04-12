@@ -141,21 +141,22 @@ public partial class RelatorioNascimentosForm : Form
     {
         try
         {
-            var dataInicio = DateTime.SpecifyKind(dtpInicio.Value.Date, DateTimeKind.Utc);
-            var dataFim = DateTime.SpecifyKind(dtpFim.Value.Date.AddDays(1).AddSeconds(-1), DateTimeKind.Utc);
+            // Convert local dates to UTC for database query
+            var dataInicio = DateTime.SpecifyKind(dtpInicio.Value.Date, DateTimeKind.Local).ToUniversalTime();
+            var dataFim = DateTime.SpecifyKind(dtpFim.Value.Date.AddDays(1).AddSeconds(-1), DateTimeKind.Local).ToUniversalTime();
 
             var registros = _context.RegistrosNascimento
                 .Include(r => r.Registrado)
                 .Where(r => r.DataRegistro >= dataInicio && r.DataRegistro <= dataFim)
                 .Select(r => new
                 {
-                    DataRegistro = r.DataRegistro,
+                    DataRegistro = r.DataRegistro.ToLocalTime(),
                     Nome = r.Registrado.Nome,
-                    DataNascimento = r.Registrado.DataNascimento,
+                    DataNascimento = r.Registrado.DataNascimento.ToLocalTime(),
                     NomePai = r.Registrado.NomePai,
                     NomeMae = r.Registrado.NomeMae,
-                    DataNascimentoPai = r.Registrado.DataNascimentoPai,
-                    DataNascimentoMae = r.Registrado.DataNascimentoMae,
+                    DataNascimentoPai = r.Registrado.DataNascimentoPai.HasValue ? r.Registrado.DataNascimentoPai.Value.ToLocalTime() : (DateTime?)null,
+                    DataNascimentoMae = r.Registrado.DataNascimentoMae.HasValue ? r.Registrado.DataNascimentoMae.Value.ToLocalTime() : (DateTime?)null,
                     CpfPai = r.Registrado.CpfPai,
                     CpfMae = r.Registrado.CpfMae
                 })
